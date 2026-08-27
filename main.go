@@ -132,6 +132,15 @@ func parseArgs() {
 		}
 		os.Exit(1)
 	}
+
+	// Validate authentication credentials
+	if authPassword == "" && authHashes == "" {
+		if !quiet {
+			fmt.Println("[!] Either option -p <password> or -H <hashes> is required.")
+			ap.Usage()
+		}
+		os.Exit(1)
+	}
 }
 
 func TestCredentials(gpppfound gpp.GroupPolicyPreferencePasswordsFound, config config.Config, noColors bool) {
