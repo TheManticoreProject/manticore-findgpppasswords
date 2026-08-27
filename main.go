@@ -192,7 +192,7 @@ func TestCredentials(gpppfound gpp.GroupPolicyPreferencePasswordsFound, config c
 					}
 					testedUsernames = append(testedUsernames, username)
 				} else {
-					message := fmt.Sprintf("   [*] Skipping test of %s : %s to avoid potentiallockout.", username, entry.Password)
+					message := fmt.Sprintf("   [*] Skipping test of %s : %s to avoid potential lockout.", username, entry.Password)
 					if !noColors {
 						message = "\x1b[93m" + message + "\x1b[0m"
 					}
