@@ -193,9 +193,7 @@ func RunWorkers(maxThreads int, domainControllersResults []*ldap.Entry, config c
 			if err != nil {
 				logger.Warn(fmt.Sprintf("%s Error: %s", advancementString, err))
 			} else {
-				if config.Debug {
-					logger.Info(fmt.Sprintf("%s Search in '\\\\%s\\SYSVOL\\' has finished successfully. ", advancementString, entry.GetEqualFoldAttributeValues("dnsHostname")[0]))
-				}
+				logger.Info(fmt.Sprintf("%s Search in '\\\\%s\\SYSVOL\\' has finished successfully. ", advancementString, entry.GetEqualFoldAttributeValues("dnsHostname")[0]))
 			}
 
 			// release semaphore
