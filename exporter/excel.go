@@ -143,7 +143,7 @@ func GenerateExcel(gpppfound gpp.GroupPolicyPreferencePasswordsFound, config con
 		}
 
 		if config.Debug {
-			logger.Info("| Successfully generated Excel file 'GroupPolicyPasswords.xlsx'")
+			logger.Info(fmt.Sprintf("| Successfully generated Excel file '%s'", filepath.Base(pathToFile)))
 		}
 	}
 }
