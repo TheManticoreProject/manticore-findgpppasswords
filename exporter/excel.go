@@ -50,9 +50,10 @@ func GenerateExcel(gpppfound gpp.GroupPolicyPreferencePasswordsFound, config con
 		logger.Info(fmt.Sprintf("| Generating Excel file '%s'", pathToFile))
 
 		// Create dir if not exists
-		if _, err := os.Stat(pathToFile); os.IsNotExist(err) {
+		if _, err := os.Stat(filepath.Dir(pathToFile)); os.IsNotExist(err) {
 			if err := os.MkdirAll(filepath.Dir(pathToFile), 0755); err != nil {
-				fmt.Println(err)
+				logger.Warn(fmt.Sprintf("Error creating directory for Excel file: %s", err))
+				return
 			}
 		}
 
