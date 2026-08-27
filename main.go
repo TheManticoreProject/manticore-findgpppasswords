@@ -380,5 +380,5 @@ func main() {
 	minutes := int(elapsedTime.Minutes()) % 60
 	seconds := int(elapsedTime.Seconds()) % 60
 	milliseconds := int(elapsedTime.Milliseconds()) % 1000
-	logger.Info(fmt.Sprintf("Total time elapsed: %02dh%02dm%02d.%04ds", hours, minutes, seconds, milliseconds))
+	logger.Info(fmt.Sprintf("Total time elapsed: %02dh%02dm%02d.%03dms", hours, minutes, seconds, milliseconds))
 }
